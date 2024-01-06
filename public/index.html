@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.1/css/boxicons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Track Match</title>
+
+</head>
+<body>
+  <nav>
+    <a class="nav-anchor-logo" href="javascript:location.reload();">
+      <img class="tm-logo" src="/assets/images/FullLogo_Transparent_NoBuffer.png" alt="Logo">
+    </a>    
+    <ul class="nav-list">
+      <li>
+        <a class="nav-anchor" id="mySongs" href="#">My Songs</a>
+        <a class="nav-anchor" href="javascript:void(0);" onclick="scrollToTop()">Home</a>
+      </li>
+    </ul>
+  </nav>
+  
+
+  <h1 class="title" id="#Home">Track Match <img class="title-logo" src="assets/images/FullLogo_Transparent_NoBuffer.png" alt="Logo"></h1>
+  <p class="motto"><i>Search your favorite tracks and discover perfect harmonic matches from a vast library of over 100 million songs</i></p>
+  
+
+    <div class="toggle-container">
+      <input type="checkbox" id="toggleSearchCheckbox">
+      <label for="toggleSearchCheckbox">Search</label>
+      <input type="checkbox" id="toggleFileUploadCheckbox">
+      <label for="toggleFileUploadCheckbox">File Upload</label>
+    </div>
+  
+  
+    
+    <div class="search-container" id="searchContainer">
+      <form id="form"> 
+        <input type="search" id="query" name="q" placeholder="Artist and Song Title...">
+        <button id="searchButton" onclick="scrollToTop()">Search</button>
+      </form>
+    </div>
+    
+  <div class="file-drop-zone" id="fileDropZone">
+        Drop your file here
+        <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 330" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><style>
+          .path-0{
+            animation:pathAnim-0 4s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+          }
+          @keyframes pathAnim-0{
+            0%{
+              d: path("M 0,400 L 0,150 C 48.18209574664941,165.36779983610458 96.36419149329882,180.73559967220916 148,191 C 199.63580850670118,201.26440032779084 254.72532977345423,206.425401147268 305,206 C 355.27467022654577,205.574598852732 400.73448941288433,199.56279573871896 448,195 C 495.26551058711567,190.43720426128104 544.3367125750086,187.32341589785617 590,164 C 635.6632874249914,140.67658410214383 677.9186602870815,97.14354066985643 720,120 C 762.0813397129185,142.85645933014357 803.9886462766659,232.10242142271804 852,220 C 900.0113537233341,207.89757857728196 954.1267546062545,94.44677363927147 1002,76 C 1049.8732453937455,57.55322636072853 1091.5043352983162,134.1104840201961 1146,157 C 1200.4956647016838,179.8895159798039 1267.855904200481,149.11129027994397 1319,139 C 1370.144095799519,128.88870972005603 1405.0720478997596,139.444354860028 1440,150 L 1440,400 L 0,400 Z");
+            }
+            25%{
+              d: path("M 0,400 L 0,150 C 55.73590367178619,139.64221893256496 111.47180734357238,129.28443786512995 157,137 C 202.52819265642762,144.71556213487005 237.8486742974967,170.50446747204526 282,188 C 326.1513257025033,205.49553252795474 379.133495466441,214.69769224668906 429,214 C 478.866504533559,213.30230775331094 525.6173438367391,202.70476354119856 567,190 C 608.3826561632609,177.29523645880144 644.3971291866028,162.48325358851676 696,167 C 747.6028708133972,171.51674641148324 814.7941394168495,195.36222210473446 870,215 C 925.2058605831505,234.63777789526554 968.4263131459993,250.0678579925454 1014,218 C 1059.5736868540007,185.9321420074546 1107.500607999154,106.3663459250839 1158,102 C 1208.499392000846,97.6336540749161 1261.5712548573845,168.4667583071189 1309,189 C 1356.4287451426155,209.5332416928811 1398.2143725713076,179.76662084644056 1440,150 L 1440,400 L 0,400 Z");
+            }
+            50%{
+              d: path("M 0,400 L 0,150 C 62.6261730418462,150.41444394512146 125.2523460836924,150.82888789024292 165,143 C 204.7476539163076,135.17111210975708 221.61678870707658,119.0988923841497 262,133 C 302.3832112929234,146.9011076158503 366.2804990880013,190.7755425731582 426,213 C 485.7195009119987,235.2244574268418 541.2612149409183,235.79893732321761 590,196 C 638.7387850590817,156.20106267678239 680.6746411483255,76.02870813397132 732,88 C 783.3253588516745,99.97129186602868 844.0402204657801,204.08623014089716 890,211 C 935.9597795342199,217.91376985910284 967.164476988554,127.62637130243996 1017,122 C 1066.835523011446,116.37362869756004 1135.3018715800047,195.40828464934307 1176,209 C 1216.6981284199953,222.59171535065693 1229.628036691427,170.74049010018769 1269,150 C 1308.371963308573,129.25950989981231 1374.1859816542865,139.62975494990616 1440,150 L 1440,400 L 0,400 Z");
+            }
+            75%{
+              d: path("M 0,400 L 0,150 C 57.19531311956436,108.29217002828517 114.39062623912872,66.58434005657035 162,79 C 209.60937376087128,91.41565994342965 247.6328081630495,157.95480980200372 297,182 C 346.3671918369505,206.04519019799628 407.07814110867326,187.59642073541463 451,184 C 494.92185889132674,180.40357926458537 522.0546274022576,191.65950725633772 572,190 C 621.9453725977424,188.34049274366228 694.7033492822966,173.76555023923447 743,146 C 791.2966507177034,118.23444976076554 815.1319754685561,77.27829178672447 856,96 C 896.8680245314439,114.72170821327553 954.7687488434797,193.12128261386766 1013,194 C 1071.2312511565203,194.87871738613234 1129.7930291575246,118.23657775780485 1171,118 C 1212.2069708424754,117.76342224219515 1236.0591345264215,193.9324063549129 1278,212 C 1319.9408654735785,230.0675936450871 1379.9704327367892,190.03379682254354 1440,150 L 1440,400 L 0,400 Z");
+            }
+            100%{
+              d: path("M 0,400 L 0,150 C 48.18209574664941,165.36779983610458 96.36419149329882,180.73559967220916 148,191 C 199.63580850670118,201.26440032779084 254.72532977345423,206.425401147268 305,206 C 355.27467022654577,205.574598852732 400.73448941288433,199.56279573871896 448,195 C 495.26551058711567,190.43720426128104 544.3367125750086,187.32341589785617 590,164 C 635.6632874249914,140.67658410214383 677.9186602870815,97.14354066985643 720,120 C 762.0813397129185,142.85645933014357 803.9886462766659,232.10242142271804 852,220 C 900.0113537233341,207.89757857728196 954.1267546062545,94.44677363927147 1002,76 C 1049.8732453937455,57.55322636072853 1091.5043352983162,134.1104840201961 1146,157 C 1200.4956647016838,179.8895159798039 1267.855904200481,149.11129027994397 1319,139 C 1370.144095799519,128.88870972005603 1405.0720478997596,139.444354860028 1440,150 L 1440,400 L 0,400 Z");
+            }
+          }</style><path d="M 0,400 L 0,150 C 48.18209574664941,165.36779983610458 96.36419149329882,180.73559967220916 148,191 C 199.63580850670118,201.26440032779084 254.72532977345423,206.425401147268 305,206 C 355.27467022654577,205.574598852732 400.73448941288433,199.56279573871896 448,195 C 495.26551058711567,190.43720426128104 544.3367125750086,187.32341589785617 590,164 C 635.6632874249914,140.67658410214383 677.9186602870815,97.14354066985643 720,120 C 762.0813397129185,142.85645933014357 803.9886462766659,232.10242142271804 852,220 C 900.0113537233341,207.89757857728196 954.1267546062545,94.44677363927147 1002,76 C 1049.8732453937455,57.55322636072853 1091.5043352983162,134.1104840201961 1146,157 C 1200.4956647016838,179.8895159798039 1267.855904200481,149.11129027994397 1319,139 C 1370.144095799519,128.88870972005603 1405.0720478997596,139.444354860028 1440,150 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="#00a5ff" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0"></path></svg>
+        <input type="file" class="file-input" />
+        <div class="drop-zone">
+          <!-- Your existing content -->
+          <div class="feedback-message"></div>
+
+          <div class="progress-container">
+            <progress class="audio-progress" max="100" value="0"></progress>
+        </div>
+    </div> 
+  </div>
+  
+    
+    <!-- Load the Essentia library first -->
+  <script src="https://cdn.jsdelivr.net/npm/essentia.js@latest/dist/essentia-wasm.web.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/essentia.js@latest/dist/essentia.js-core.js"></script>
+
+ 
+<div id="searchStatus"> </div>
+
+  <div class="content-container">
+    <div class="results" id="results">
+      <p class="result-text">Title: <span id="title">--</span></p>
+      <p class="result-text">Artist: <span id="artist">--</span></p>
+      <p class="result-text">Key: <span id="key">--</span></p>
+      <p class="result-text">BPM: <span id="bpm">--</span></p>
+    </div>     
+    <div id="searchStatus2"> </div>
+  </div>  
+
+
+    <div id="spotartist"></div>
+    <div id="spottitle"></div>
+
+  <section id="results-section" class="container">
+    <div id="mySavedSongs" style="display:none;"></div>
+    <div  class="spotResultMain" id="spotResultMain"></div>
+    <div id="spotresults"></div>
+  </section>
+
+<footer class="footer" id="footerID">
+  <ul>
+    <li class="footer-list">
+      Music database provided by <a href="https://open.spotify.com/">
+         <img class="spotify-logo" src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png" alt="Spotify Logo">
+        </a>  & <a class="mb-anchor" href="https://musicbrainz.org/">MusicBrainz
+          <img class="musicbrainz-logo" src="https://raw.githubusercontent.com/metabrainz/metabrainz-logos/master/logos/MusicBrainz/PNG/MusicBrainz_logo_icon.png" alt="MusicBrainz-Logo">
+         </a> 
+  </li>
+    <li class="footer-list">
+      Analyzer powered by <a class="essentia-link" href="https://essentia.upf.edu/">Essentia.js</a>, and Essentia models, licenced by <a class="mtg-link" href="https://www.upf.edu/web/mtg">MTG</a>
+    </li>
+  </ul>
+
+  </li>
+</footer>
+
+
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>

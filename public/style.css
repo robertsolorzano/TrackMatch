@@ -1,0 +1,740 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,700&display=swap');
+
+* {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Minimum height to cover the full viewport */
+    background: linear-gradient(145deg, #403e44, #000000);
+    background-attachment: fixed; /* Keeps the gradient fixed with regard to the viewport */
+    color: #fff;
+    font-family: "Nunito Sans", sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack children elements vertically */
+  }
+
+/* Navbar styles */
+nav {
+  display: flex;
+  justify-content: space-between; /* Adjusts the space between logo and nav links */
+  align-items: center; /* Keeps items vertically centered */
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0; /* Stretches the nav to full width */
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0px 10px;
+  z-index: 1000;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  display: inline; /* Display list items horizontally */
+  margin-right: 20px; /* Adjust spacing between list items */
+}
+
+.nav-anchor {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px; /* Adjust the font size as needed */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth background-color and color transition on hover */
+  padding: 5px 15px; /* Add padding for better spacing */
+  border: 2px solid transparent; /* Add a transparent border initially */
+  border-radius: 8px;
+}
+
+.nav-anchor:hover {
+  background-color: #00a5ff; /* Change the background color on hover */
+  color: #fff; /* Change the text color on hover */
+}
+
+.nav-anchor-logo {
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth background-color and color transition on hover */
+  padding: 5px 15px; /* Add padding for better spacing */
+  border: 2px solid transparent; /* Add a transparent border initially */
+  border-radius: 8px;
+}
+
+.nav-anchor-logo:hover {
+  background-color: #00a5ff; /* Change the background color on hover */
+  color: #fff; /* Change the text color on hover */
+}
+
+.tm-logo {
+  width: 30px;
+  height: auto;
+}
+
+/* Adjustments for smaller screens using a media query */
+@media (max-width: 480px) { /* iPhone screen width and smaller */
+  nav {
+    padding: 5px; /* Reduced padding */
+  }
+  
+  .nav-list li {
+    margin-right: 0px; /* Reduced margin between list items */
+  }
+
+  .nav-anchor {
+    font-size: 15px; /* Reduced font size */
+    padding: 2px 5px; /* Adjusted padding for better spacing */
+  }
+
+  .nav-anchor-logo {
+    padding: 2px 5px; /* Add padding for better spacing */
+  }
+  
+  .tm-logo {
+    width: 18px;
+    height: auto;
+  }
+}
+
+/* Styles for h1 element */
+h1 {
+  border: 0;
+  padding: 0;
+  margin-top: 10%; /* Default margin-top for smaller screens */
+  color: #ffffff; /* Or any color you prefer */
+  background-color: transparent;
+  position: static;
+  text-align: center;
+  font-size: 4vw; /* Responsive font size */
+  font-weight: 700; /* Makes the text bolder and more pronounced */
+  text-shadow: 2px 2px 4px #000000; /* Adds a subtle shadow for depth */
+  animation: fadeIn 1s ease-in;
+  margin-bottom: 20px;
+  display: inline-block; /* Aligns text and logo */
+  vertical-align: middle; /* Aligns text and logo */
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 1440px) {
+  h1 {
+    margin-top: 5%; /* Adjust margin-top for larger screens */
+  }
+}
+
+.title-logo {
+  width: auto; /* Adjust as necessary */
+  height: 60px; /* Adjust as necessary */
+}
+
+/* Styles for the sentence below the h1 element */
+.motto {
+  color: #ffffff; /* Or any color you prefer */
+  text-align: center;
+  font-size: 1.3vw; /* Responsive font size */
+  font-weight: 400; /* You can adjust the font weight as needed */
+  animation: fadeIn 1s ease-in;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 1024px) {
+  .title {
+    margin-top: 100px; /* Fixed space for smaller screens */
+  }
+  .motto {
+    font-size: 2vw; /* Responsive font size */
+  }
+}
+
+/* Larger screens: setting a max font size */
+@media screen and (min-width: 541px) {
+  h1 {
+    font-size: 80px; /* This will be the font size for screens wider than 480px */
+  }
+  
+}
+
+/* Smaller screens: adjusting font size similar to the one for 480px */
+@media screen and (max-width: 540px) { /* Target screens smaller than 480px */
+  h1 {
+    font-size: 48px; /* This is an example, adjust as needed */
+  }
+  .title-logo {
+    width: auto; /* Adjust as necessary */
+    height: 36px; /* Adjust as necessary */
+  }
+  .motto {
+    font-size: 3.2vw; /* Responsive font size */
+  }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.file-drop-zone {
+  width: 200px; /* Use a percentage width for responsiveness */
+  height: auto; /* Allow the height to adjust based on content */
+  max-height: 100px; /* Set a minimum height to prevent it from becoming too small */
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-style: italic;
+  color: #ffffff;
+  padding: 0px;
+}
+
+.progress-container {
+    margin: 20px;
+}
+
+.audio-progress {
+    width: 100%;
+    height: 20px;
+    appearance: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.audio-progress::-webkit-progress-bar {
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+.audio-progress::-webkit-progress-value {
+    background: linear-gradient(to right, #004e78, #00a5ff);
+    /*background: linear-gradient(to right, #4CAF50, #2196F3);*/
+    border-radius: 10px;
+}
+
+.file-drop-zone:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05); /* Only scale, don't translate */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.file-input {
+    display: none; 
+}
+
+.content-container {
+    flex: 1; 
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: static;
+}
+
+
+.results {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgb(0 0 0 / 25%));
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for the box */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    width: 80%; /* Adjust width as needed */
+    max-width: 500px; /* Maximum width of the box */
+    margin: auto; /* Center the box */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    text-align: center; /* Center the text */
+    display: none;
+    
+}
+
+.result-text {
+    font-size: 1rem; /* Base font size for legibility */
+    color: #fff; /* White text color */
+    margin: 10px 0; /* Spacing between each result */
+    padding: 0; /* Reset padding */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for a 3D effect */
+}
+
+.result-text:not(:last-child) {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.result-text span {
+    font-weight: 500; /* Semi-bold font weight */
+    color: #FFD700; /* Golden color for key information */
+}
+
+
+
+.bx {
+  /* Styles for Boxicons */
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  font-size: 24px; /* Adjust as needed */
+  color: #FFD700; /* Adjust as needed */
+  cursor: pointer;
+}
+
+.track img {
+    width: 100%; /* Album cover takes full width of the card */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 15px; /* Space between image and text */
+}
+
+.track p, .track a {
+    text-align: center;
+}
+
+.track a {
+  background-color: #1DB954; /* Spotify green */
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  display: inline-block;
+  transition: background-color 0.3s ease
+}
+
+.track a:hover{
+    background-color: #167f3b
+}
+
+
+.track-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.track-title {
+    white-space: nowrap;      /* Ensures the text stays on a single line */
+    display: block;           /* Ensures the element behaves like a block (takes up the full width available) */
+    max-width: 280px;
+}
+
+.marquee {
+    animation: moveTitle 10s linear infinite;
+}
+
+@keyframes moveTitle {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+.track .play-icon,
+.track .pause-icon {
+    position: relative;
+    bottom: 380px;
+    width: 30px; /* Adjust if needed */
+    height: 30px; /* Adjust if needed */
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.track .play-icon {
+  background-image: url('assets/images/play-icon.png'); /* Relative path from the CSS file */
+}
+
+.track .pause-icon {
+  background-image: url('assets/images/pause-icon.png'); /* Relative path from the CSS file */
+}
+/* Show play button on hover */
+.track .album-cover:hover ~ .play-icon,
+.track .album-cover:hover ~ .pause-icon {
+    opacity: 1; /* Make the icons visible on hover */
+}
+
+/* Keep icons visible when you hover over them directly */
+.track .play-icon:hover,
+.track .pause-icon:hover {
+    opacity: 1;
+}
+
+.track {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1); 
+    border: 2px solid #777777;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    margin: 10px auto;
+    overflow: hidden;
+    width: 320px; /* Adjust width as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+#spotresults {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive grid layout */
+  gap: 40px;
+  margin: 0 auto; /* Center the grid horizontally on all screen sizes */
+  max-width: 95%; /* Adjust the maximum width to your preference */
+  width: 100%; /* Ensure the grid takes up the full available width */
+}
+
+
+#spotresults .track.relative-track {
+    padding: 10px;
+    margin-bottom: 40px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+#spotresults .track.relative-track:hover {
+    border-color: #ac9853;; /* Change to your desired border color */
+    box-shadow: 0 12px 16px #a2965a; /* Add some shadow for depth */
+}
+#spotresults .track {
+    padding: 10px;
+    margin-bottom: 40px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+#spotresults .track:hover {
+    border-color: #fff;; /* Change to your desired border color */
+    box-shadow: 0 12px 16px rgb(193 193 193); /* Add some shadow for depth */
+}
+
+#spotresults .track img {
+    width: auto;  /* Adjusted width */
+    height: 320px;
+}
+
+#spotResultMain .track {
+  padding: 10px;
+  margin-bottom: 40px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+#spotResultMain .track:hover {
+  border-color: #0188d1;; /* Change to your desired border color */
+  box-shadow: 0 12px 16px #018edb; /* Add some shadow for depth */
+}
+
+#spotResultMain .track img {
+  width: auto;  /* Adjusted width */
+  height: 320px;
+}
+
+.original-detail-value {
+  color: #FFD700; /* Replace with the color you want for the detail values */
+}
+
+#mySavedSongs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive grid layout */
+  gap: 40px;
+  margin: 0 auto; /* Center the grid horizontally on all screen sizes */
+  max-width: 95%; /* Adjust the maximum width to your preference */
+  width: 100%; /* Ensure the grid takes up the full available width */
+}
+
+#mySavedSongs .track {
+  padding: 10px;
+  margin-bottom: 40px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+#mySavedSongs .track:hover {
+  border-color: #fff;; /* Change to your desired border color */
+  box-shadow: 0 12px 16px rgb(193 193 193); /* Add some shadow for depth */
+}
+
+#mySavedSongs .track img {
+  width: auto;  /* Adjusted width */
+  height: 320px;
+}
+
+.empty-track {
+  position: static;
+  align-items: center;
+  top: -160px;
+  border: 2px solid #7777771c;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  color: #ffffff8f;
+  margin: 10px auto;
+  width: 260px; /* Adjust width as needed */
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+
+.album-cover-placeholder {
+  position: relative; /* This needs to be set for absolute positioning of children */
+  width: 100%;
+  height: 180px; /* Adjust as needed */
+  background-color: #55555526; /* Placeholder gray */
+  margin-bottom: 15px; /* Space between image placeholder and text placeholders */
+  border-radius: 8px;
+}
+
+.track-details-placeholder p,
+.audio-player-placeholder,
+.play-icon-placeholder {
+  height: 14px; /* Adjust as needed */
+  padding: 10px;
+  width: 90%;
+  background-color: #55555526; /* Placeholder gray */
+  margin-bottom: 10px; /* Space between each placeholder element */
+}
+
+.spotify-link-placeholder{
+  background-color: #1db95496; /* Spotify green */
+  color: #ffffffb8;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-top: 0px;
+  display: inline-block;
+}
+
+
+.no-songs-overlay-text {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: #ffffffb8; /* Text color */
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+}
+
+h1, .file-drop-zone, #results {
+    transition: opacity 1.5s ease;
+}
+
+.track audio {
+    width: 400px;
+    display: none; /* Hide the default audio controls */
+}
+
+
+  
+.footer {
+  width: 100%;
+  height: 100px;
+  color: #aaa7a7;
+  text-align: center;
+  margin-top: 30px;
+  animation: fadeIn 1s ease-in;
+}
+  .footer-list {
+    list-style-type: none;
+    margin-bottom: 8px;
+  }
+
+  .spotify-logo {
+    vertical-align: middle;
+    width: 84px;
+    height: auto;
+    transition: transform 0.3s ease; /* This will smooth the transition of the transform property */
+  }
+  
+  .spotify-logo:hover {
+    transform: scale(1.05); /* This will scale the image to 110% of its original size on hover */
+  }
+  
+  .musicbrainz-logo {
+    vertical-align: middle;
+    width: 22px;
+    height: auto;
+    transition: transform 0.3s ease; /* This will smooth the transition of the transform property */
+  }
+  
+  .musicbrainz-logo:hover {
+    transform: scale(1.05); /* This will scale the image to 110% of its original size on hover */
+  }
+
+  .mb-anchor {
+    text-decoration: none;
+    color: #aaa7a7;
+    transition: color 0.3s ease; /* Transition effect for color change */
+  }
+
+  .mb-anchor:hover {
+    color: #c739ff; 
+  }
+  
+  .mtg-link {
+    text-decoration: none;
+    color: #aaa7a7; 
+    transition: color 0.3s ease; /* Transition effect for color change */
+  }
+  
+  .mtg-link:hover {
+    color: #ff4242; 
+  }
+
+  .essentia-link {
+    text-decoration: none;
+    color: #aaa7a7; 
+    transition: color 0.3s ease; /* Transition effect for color change */
+  }
+  
+  .essentia-link:hover {
+    color: #42adff; 
+  }
+  
+
+
+/* Style the toggle container */
+.toggle-container {
+  text-align: center;
+  margin: 20px auto;
+}
+
+/* Style the checkboxes */
+.toggle-container input[type="checkbox"] {
+  display: none; /* Hide the checkboxes */
+}
+
+/* Style the labels for the checkboxes */
+.toggle-container label {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 5px 10px;
+  background-color: #333; /* Background color for labels */
+  color: #fff; /* Text color for labels */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add background color transition */
+  animation: fadeIn 1s ease-in;
+}
+
+/* Style the labels when checkboxes are checked */
+.toggle-container input[type="checkbox"]:checked + label {
+  background-color: #FFD700; /* Background color for checked labels */
+  color: #fff; /* Text color for checked labels */
+}
+
+/* Hide the search container by default */
+#searchContainer {
+  display: none;
+}
+
+/* Show the search container when the search checkbox is checked */
+.toggle-container #toggleSearchCheckbox:checked ~ #searchContainer {
+  display: block;
+}
+
+/* Hide the file drop zone by default */
+#fileDropZone {
+  display: none;
+}
+
+/* Show the file drop zone when the file upload checkbox is checked */
+.toggle-container #toggleFileUploadCheckbox:checked ~ #fileDropZone {
+  display: block;
+}
+
+#form {
+  display: flex;
+  justify-content: center; /* Ensures contents of form are centered */
+  width: auto; /* Or you could use a specific width like 80% to constrain it */
+}
+
+/* Center the entire .search-container */
+.search-container {
+  display: flex; /* Use flexbox for easy centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 100%; /* Take up the full width of its parent */
+  height: 100px; /* Or any appropriate height */
+}
+
+
+/* Style the search input */
+#query {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd; /* Light grey border */
+  border-radius: 5px;
+  width: 300px; /* Or any appropriate width */
+}
+
+/* Style the search button */
+#form button {
+  padding: 10px 20px;
+  background-color: #00a5ff; /* Light blue background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#form button:hover {
+  background-color: #007acc; /* Slightly darker blue on hover */
+}
+
+#searchStatus {
+  margin: 10px;
+  color: #ffffff; /* or any color you prefer */
+  font-style: italic;
+  text-align: center; /* centers text horizontally */
+  opacity: 0; /* start out transparent */
+  animation: fadeInOut 2s infinite; /* apply the animation, change '2s' to the duration you prefer */
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+#spotifyWord {
+  color: #1DB954; /* Spotify's brand color */
+  font-weight: bold; /* make it bold */
+  /* Add more styles or animations as needed */
+}
+
+#searchStatus2 {
+  color: #ffffff; /* or any color you prefer */
+  font-style: italic;
+  text-align: center; /* centers text horizontally */
+  opacity: 0; /* start out transparent */
+  animation: fadeInOut 2s infinite; /* apply the animation, change '2s' to the duration you prefer */
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+#spotifyWord {
+  color: #1DB954; /* Spotify's brand color */
+  font-weight: bold; /* make it bold */
+  /* Add more styles or animations as needed */
+}
+
