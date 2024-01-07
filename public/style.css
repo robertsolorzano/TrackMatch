@@ -45,17 +45,18 @@ nav {
 
 .nav-anchor {
   text-decoration: none;
-  color: #fff;
-  font-size: 18px; /* Adjust the font size as needed */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth background-color and color transition on hover */
-  padding: 5px 15px; /* Add padding for better spacing */
-  border: 2px solid transparent; /* Add a transparent border initially */
+  font-size: 18px;
+  padding: 5px 15px;
+  border: 2px solid transparent;
   border-radius: 8px;
+  cursor: pointer; /* Add pointer cursor to indicate it's clickable */
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
 }
-
-.nav-anchor:hover {
-  background-color: #00a5ff; /* Change the background color on hover */
-  color: #fff; /* Change the text color on hover */
+.nav-anchor.active {
+  /* Toggled color and background */
+  background-color: #00a5ff;
+  color: #fff;
 }
 
 .nav-anchor-logo {
@@ -225,7 +226,7 @@ h1 {
 }
 
 .audio-progress::-webkit-progress-value {
-    background: linear-gradient(to right, #004e78, #00a5ff);
+    background: linear-gradient(to right, #00669d, #00a5ff);
     /*background: linear-gradient(to right, #4CAF50, #2196F3);*/
     border-radius: 10px;
 }

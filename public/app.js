@@ -116,6 +116,23 @@ document.addEventListener('click', function(event) {
       }
   });
 
+  const mySongsAnchor = document.querySelector(".nav-anchor#mySongs");
+  const homeAnchor = document.querySelector(".nav-anchor[href='javascript:void(0);']");
+
+  mySongsAnchor.addEventListener("click", function(event) {
+    event.preventDefault();
+    mySongsAnchor.classList.toggle("active");
+  });
+
+  homeAnchor.addEventListener("click", function(event) {
+    event.preventDefault();
+    homeAnchor.classList.toggle("active");
+
+    // Reset the "Home" button color after 2000 milliseconds (2 seconds)
+    setTimeout(function() {
+      homeAnchor.classList.remove("active");
+    }, 1000);
+  });
 });
 
 
@@ -1001,3 +1018,5 @@ function displaySearchResults(originalFeatures, originalTrack) {
   // Ensure it's visible (you might need additional logic here to handle visibility depending on your design)
   additionalResultsContainer.style.display = 'grid';
 }
+
+
