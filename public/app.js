@@ -220,6 +220,14 @@ function createTrackElementFromSaved(song) {
   artistP.textContent = `Artist: ${song.artist}`;
   detailsDiv.appendChild(artistP);
 
+    // Wait for the next frame so the DOM updates, then check the width of artist name
+    requestAnimationFrame(() => {
+      if (artistP.scrollWidth > artistP.clientWidth) {
+        artistP.classList.add('marquee');
+      }
+    });
+  
+
   // Add BPM
   const bpmP = document.createElement('p');
   bpmP.textContent = `BPM: ${song.bpm}`;
@@ -807,16 +815,16 @@ function createTrackElement(track, song, isRelative, detailClass = '') {
   return trackDiv;
 }
 
-function displayTrackInfo(data, mainTrackId) {
+function displayTrackInfo(data) {
   const { tracks, analysisSongs, relativeSongs, analysisNewTempoSongs, relativeNewTempoSongs } = data;
   const resultsContainer = document.getElementById('spotresults');
   resultsContainer.innerHTML = ''; // Clear previous results
-
+  console.log('Original track ID: ', originalTrackId)
   // Map audio feature arrays by track ID for easy lookup
   const audioFeaturesMap = new Map();
 
   // Create a set of all relative song IDs for easy lookup
-  const relativeSongIds = new Set([...relativeSongs, ...relativeNewTempoSongs].map(song => song.id));
+  const relativeSongIds = new Set([...relativeSongs, ...analysisNewTempoSongs].map(song => song.id));
 
   // Insert all audio feature objects into the map with their track ID as the key
   [analysisSongs, relativeSongs, analysisNewTempoSongs, relativeNewTempoSongs].forEach((featureArray) => {
@@ -827,26 +835,26 @@ function displayTrackInfo(data, mainTrackId) {
     });
   });
 
-  // Iterate through each track in the 'tracks' array
+  // Iterate through each track in the 'tracks' array and display them
   tracks.forEach((track) => {
     if (track && track.id) {
-      // Skip adding the track if it's the same as the main result
-      if (track.id === mainTrackId) {
-        console.log("Duplicate found and removed: ", track.id);
-        return;
-      }
-
-      const audioFeatures = audioFeaturesMap.get(track.id);
-      if (audioFeatures) {
-        // Determine if the audio feature is from a relative array
-        const isRelative = relativeSongIds.has(audioFeatures.id);
-        // Create track element with the matched audio features and relative status
-        const trackElement = createTrackElement(track, audioFeatures, isRelative);
-        resultsContainer.appendChild(trackElement);
+      if (track.id !== originalTrackId) {
+        const audioFeatures = audioFeaturesMap.get(track.id);
+        if (audioFeatures) {
+          // Determine if the audio feature is from a relative array
+          const isRelative = relativeSongIds.has(audioFeatures.id);
+          // Create track element with the matched audio features and relative status
+          const trackElement = createTrackElement(track, audioFeatures, isRelative);
+          resultsContainer.appendChild(trackElement);
+        }
+      } else {
+        // Log that a duplicate was found and excluded
+        console.log(`Duplicate track with ID: ${track.id} (original track) was excluded`);
       }
     }
   });
 }
+
 
 // Helper function to toggle play/pause
 function togglePlayPause(audioPlayer, playIcon) {
@@ -936,6 +944,7 @@ window.addEventListener('load', updateLabelsOnLoad);
 
 //Code to search button
 const searchButton = document.getElementById('searchButton');
+let originalTrackId = null; // Initialize outside to have wider scope
 
 function searchSong(searchTerm) {
   if (!searchTerm.trim()) {
@@ -974,12 +983,17 @@ function searchSong(searchTerm) {
     return response.json();
   })
   .then(data => {
-    console.log("Data received from server:", data);  // Log the received data
-    document.getElementById('searchStatus').textContent = "";  // Clear or update the status message
-
-    // Display search results
+    console.log("Data received from server:", data);
+    document.getElementById('searchStatus').textContent = "";
+  
+    // Set the original track ID for later comparison
+    if (data.originalTrack) {
+      originalTrackId = data.originalTrack.id;
+    }
+  
     displaySearchResults(data.original, data.originalTrack);
-    displayTrackInfo(data);
+    displayTrackInfo(data); // Now this function knows to skip the original track ID
+  
 
     // Clear the search input
     document.getElementById('query').value = '';  // Clear the search bar
