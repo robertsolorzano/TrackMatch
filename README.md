@@ -42,8 +42,8 @@ Visit [Track Match](https://www.trackmatch.net/) <img src="https://www.trackmatc
 
 ## Dependencies
 
-- [Express](https://expressjs.com/) - Web application framework.
-- [Axios](https://github.com/axios/axios) - For making HTTP requests to the Spotify and MusicBrainz APIs.
+- [Express](https://expressjs.com/) <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAMFBMVEX////q6uqgoaEZGhtzc3SSk5Ourq5hYmLHx8f09PVOTk+7u7vf39+DhITT09M3ODgiPZ4kAAAAxElEQVR4Ac2OMQgBARSGv6sDQfbSKaWsHsgV6vZS9lK3F9lL2ctsvcmm7GWfyF5XNhvTbef+yT7x1ft7/f3/6/HHOC3r1gnmQLhGamYjDj5U7ALk7UbD4tp4T2EA4EnDFeGMxQygdQWqEwp+OQsBkXrlAU76nAA4Y2mlB2drotVMDMHN5mtMwbMYVeQjNsEKkaJcm3wv10fcl4Dr8zgSnQB2L/RYKdrKA3LW0etun6yFCMwsyTK6qzrFu733xbQOeAk/4gMf6S1GJRc9sQAAAABJRU5ErkJggg==" width="12" alt="Track Match Icon">  - Web application framework.
+- [Axios](https://github.com/axios/axios)<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABIElEQVR4Ae2XAUcEQRiGB3B/JQH0CxJgAYIqEAg5BBApAkEciCCIiMISEhKCIKSqqLrNce3oLtVqttknRosssLu+gX34ALyPmRm+V+UACgiAENDUjwbCvwz1D6AF7CKGy2rl4aoQLifhBAL8ESggxB+hquPBZRaebwwl0IqKDGLL6uwr22sDylBZ4OI0YWokkhc42vmge2fkBVKTsbX85kIfr4QFhrFlZabvAsUFHi4NC+M9FyYuYC2cHX5xsv/pZmmyLylQZKOtG4FGoBEoCLQneqzPx272OkOsFRbIp7Oo+U4y+ROYHo042HyHzMMVzI29cH6c+HkDT9eG7q0B8COQIy3gvt1PSmVKLaXRfUpNaO9rufdi4rua+S+n3uv5LxoSNklgIWvnAAAAAElFTkSuQmCC" width="12" alt="Track Match Icon"> - For making HTTP requests to the Spotify and MusicBrainz APIs.
 - [dotenv](https://www.npmjs.com/package/dotenv) - To manage environment variables.
 
 ## Contributing
