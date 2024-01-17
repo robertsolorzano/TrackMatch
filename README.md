@@ -1,4 +1,4 @@
-# Track Match ![Track Match Icon](https://www.trackmatch.net/assets/images/FullLogo_Transparent_NoBuffer.png)
+# Track Match <img src="https://www.trackmatch.net/assets/images/FullLogo_Transparent_NoBuffer.png" width="100" alt="Track Match Icon">
 
 Track-Match is a dynamic web application built with Node.js and Express, designed to enhance music discovery. It integrates with the Spotify API and MusicBrainz API, offering users a comprehensive music search experience. Hosted on Heroku, it provides a reliable and scalable platform for music enthusiasts.
 
