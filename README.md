@@ -36,8 +36,8 @@ Track-Match is a dynamic web application built with Node.js and Express, designe
 
 Visit [Track Match](https://www.trackmatch.net/) for more information and to experience the application.
 
-<img src="/public/assets/images/preview.jpeg" width="200" alt="Preview-image">
-## Hosting
+![Alt Text](URL-of-the-GIF)
+
 
 - Deployed on [Heroku](https://www.heroku.com/), ensuring efficient management and scalability.
 
