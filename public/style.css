@@ -126,6 +126,10 @@ h1 {
   h1 {
     margin-top: 5%; /* Adjust margin-top for larger screens */
   }
+  .motto {
+    margin-left: 300px;
+    margin-right: 300px;
+  }
 }
 
 .title-logo {
@@ -137,11 +141,19 @@ h1 {
 .motto {
   color: #ffffff; /* Or any color you prefer */
   text-align: center;
-  font-size: 1.3vw; /* Responsive font size */
-  font-weight: 400; /* You can adjust the font weight as needed */
+  font-size: 1.1vw; /* Responsive font size */
+  font-weight: 200; /* You can adjust the font weight as needed */
   animation: fadeIn 1s ease-in;
-  margin-left: 20px;
-  margin-right: 20px;
+
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 1440px) {
+  .motto {
+    font-size: 1.3vw; /* Responsive font size */
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
 /* Media query for smaller screens */
